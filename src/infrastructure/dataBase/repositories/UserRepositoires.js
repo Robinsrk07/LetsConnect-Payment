@@ -23,6 +23,7 @@ class UserRepository extends IUserRepository {
     try {
 
       console.log("userdb",user)
+      console.log("userdb",user)
       const newUser = new UserModel(user);
       const savedUser = await newUser.save();
     
