@@ -10,7 +10,9 @@ class updateUser{
             throw new Error("not found")
         }
 
-        await this.userRepository.updateUser(user,ownUser[0].userId)
+     const update_user =  await this.userRepository.updateUser(user,ownUser[0].userId)
+
+     console.log("updateUser",update_user)
     }
 }
 

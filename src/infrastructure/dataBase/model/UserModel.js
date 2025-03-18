@@ -1,24 +1,26 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
+    name: { type: String, required: true },
     emailId: { type: String, required: true, unique: true },
+    password: { type: String, required: true },
     photoUrl: { type: [String] },
-    skills: { type: [String] },
-    age: { type: Number },
     about: { type: String },
     gender: { type: String },
-    userId:{type: String},
-    //password:{type: String},
+    pincode:{type:String},
+    town:{type:String},
+    dob:{type:Date},
+    userId:{type:String},
     isPremium:{
         type:Boolean,
-        default :false
+        default :false 
     },
     memberShipType:{
-        type: String
-    }
+        type: String,
+        default :"none" 
 
+    }
+    
 },{
     timeStamps:true
 

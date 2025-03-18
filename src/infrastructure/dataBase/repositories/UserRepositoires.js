@@ -38,27 +38,23 @@ class UserRepository extends IUserRepository {
       console.log("Received user data:", user.data.savedUser);
       console.log("userId:", userId);
       const {
-        firstName,
-        lastName,
-        emailId,
+        name,
         photoUrl,
-        skills,
-        age,
+        pincode,
+        town,
+        dob,
         about,
-        gender,
-        password,
+        gender
       } = user.data.savedUser;
 
       const updateData = {
-        firstName,
-        lastName,
-        emailId,
+        name,
         photoUrl,
-        skills,
-        age,
+        pincode,
+        town,
+        dob,
         about,
-        gender,
-        password,
+        gender
       };
       const updatedUser = await UserModel.findOneAndUpdate(
         { userId: userId },

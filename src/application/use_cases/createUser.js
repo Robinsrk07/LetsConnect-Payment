@@ -12,20 +12,21 @@ class UserCreatedCase {
           "invalid userdata userservice  UserCreatedCase"
         );
       }
-      const data= Userdata.data
+      const userData= Userdata.data
       console.log("useCase",Userdata.data)
       const user = new User({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        emailId: data.emailId,
-        photoUrl: data.photoUrl,
-        skills: data.skills,
-        age: data.age,
-        about: data.about,
-        gender: data.gender,
-        isPremium: data.isPremium,
-        memberShipType: data.memberShipType,
-        userId:data.userId
+        name: userData.name,
+        emailId: userData.emailId,
+        photoUrl: userData.photoUrl,
+        about: userData.about,
+        password:userData.password,
+        gender: userData.gender,
+        isPremium: userData.isPremium,
+        memberShipType: userData.memberShipType,
+        userId:userData.userId ,
+        town :userData.town,
+        pincode : userData.pincode,
+        dob : userData.dob
       });
       const savedUser = await this.userRepository.save(user);
       return savedUser;
